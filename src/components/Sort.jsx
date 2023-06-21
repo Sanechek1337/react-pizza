@@ -1,4 +1,15 @@
+import { useState } from "react";
+
 const Sort = () => {
+	const sortTypes = ['популярности', 'цене', 'алфавиту'];
+	const [showPopup, setShowPopoup] = useState(false);
+	const [currentSortType, setCurrentSortType] = useState(sortTypes[0]);
+
+	const handleSortChoice = (sortTypeIndex) => {
+		setShowPopoup(!showPopup);
+		setCurrentSortType(sortTypes[sortTypeIndex]);
+	}
+
 	return (
 		<div className="sort">
 			<div className="sort__label">
@@ -15,15 +26,22 @@ const Sort = () => {
 					/>
 				</svg>
 				<b>Сортировка по:</b>
-				<span>популярности</span>
+				<span onClick={() => setShowPopoup(!showPopup)}>{currentSortType}</span>
 			</div>
-			<div className="sort__popup">
+			{showPopup && <div className="sort__popup" >
 				<ul>
-					<li className="active">популярности</li>
-					<li>цене</li>
-					<li>алфавиту</li>
+					{sortTypes.map((sortType, index) => (
+						<li
+							className={currentSortType === sortTypes[index] ? 'active' : ''}
+							key={index}
+							onClick={() => handleSortChoice(index)}
+						>
+							{sortType}
+						</li>
+					))}
 				</ul>
 			</div>
+			}
 		</div>
 	);
 }
