@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Sort = () => {
+const Sort = ({ sort, setSort }) => {
 	const sortTypes = ['популярности', 'цене', 'алфавиту'];
 	const [showPopup, setShowPopoup] = useState(false);
 	const [currentSortType, setCurrentSortType] = useState(sortTypes[0]);
@@ -9,6 +9,10 @@ const Sort = () => {
 		setShowPopoup(!showPopup);
 		setCurrentSortType(sortTypes[sortTypeIndex]);
 	}
+
+	useEffect(() => {
+		setSort(currentSortType === 'популярности' ? 'rating' : currentSortType === 'цене' ? 'price' : 'title');
+	}, [currentSortType])
 
 	return (
 		<div className="sort">

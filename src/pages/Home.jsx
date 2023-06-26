@@ -8,6 +8,11 @@ import { PizzaSkeleton } from '../components/PizzaBlock/PizzaSkeleton';
 const Home = () => {
 	const [pizzaList, setPizzaList] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [category, setCategory] = useState(0);
+	const [sort, setSort] = useState('');
+
+	const sortBy = `?sortBy=${sort}`;
+	const filterBy = category > 0 ? `&category=${category}` : '';
 
 	useEffect(() => {
 		// (async () => {
@@ -18,21 +23,23 @@ const Home = () => {
 		// 		setPizzaList(request)
 		// 	}
 		// })()
+		if (pizzaList.length === 0) window.scrollTo(0, 0);
 
-		fetch('https://64932246428c3d2035d1632a.mockapi.io/pizzasData/pizzas')
+		setIsLoading(true);
+		fetch(`https://64932246428c3d2035d1632a.mockapi.io/pizzasData/pizzas${sortBy}${filterBy}`)
 			.then(res => res.json())
 			.then(pizzas => {
 				setPizzaList(pizzas);
 				setIsLoading(false);
 			})
-		window.scrollTo(0, 0);
-	}, [])
+
+	}, [category, sort])
 
 	return (
 		<div className="container">
 			<div className="content__top">
-				<Categories />
-				<Sort />
+				<Categories category={category} setCategory={setCategory} />
+				<Sort sort={sort} setSort={setSort} />
 			</div>
 			<h2 className="content__title">Все пиццы</h2>
 			<div className="content__items">

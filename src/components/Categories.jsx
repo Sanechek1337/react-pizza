@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const Categories = () => {
+const Categories = ({ category, setCategory }) => {
 	const categoriesTitle = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 	const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
+
+	useEffect(() => {
+		setCategory(activeCategoryIndex === 0 ? '' : activeCategoryIndex);
+	}, [activeCategoryIndex])
 
 	return (
 		<div className="categories">
