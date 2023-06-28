@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, createContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header';
