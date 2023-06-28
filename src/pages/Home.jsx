@@ -1,24 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import { PizzaSkeleton } from '../components/PizzaBlock/PizzaSkeleton';
 import Pagination from '../components/Pagination';
+import { SearchContext } from '../App';
 
-const Home = ({ searchValue }) => {
+const Home = () => {
 	const [pizzaList, setPizzaList] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [category, setCategory] = useState(0);
 	const [sort, setSort] = useState('rating');
 	const [currentPage, setCurrentPage] = useState(1);
+	const { searchValue } = useContext(SearchContext);
 
-	const sortBy = `?sortBy=${sort}`;
+	const sortBy = `sortBy=${sort}`;
 	const filterBy = category > 0 ? `&category=${category}` : '';
 	const search = searchValue ? `&search=${searchValue}` : '';
 
-	const skeletons = [...new Array(10)].map((_, index) => { return <PizzaSkeleton key={index} /> });
-	const pizzas = pizzaList.map((pizzaInfo, index) => (<PizzaBlock {...pizzaInfo} key={pizzaInfo.id} />));
+	const skeletons = [...new Array(4)].map((_, index) => { return <PizzaSkeleton key={index} /> });
+	const pizzas = pizzaList.map((pizzaInfo) => (<PizzaBlock {...pizzaInfo} key={pizzaInfo.id} />));
 
 	useEffect(() => {
 		if (pizzaList.length === 0) window.scrollTo(0, 0);
