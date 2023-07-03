@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const Categories = ({ category, setCategory }) => {
+const Categories = ({ categoryId, onChangeCategory }) => {
 	const categoriesTitle = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
-	const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
-
-	useEffect(() => {
-		setCategory(activeCategoryIndex === 0 ? '' : activeCategoryIndex);
-	}, [activeCategoryIndex])
 
 	return (
 		<div className="categories">
@@ -14,9 +9,9 @@ const Categories = ({ category, setCategory }) => {
 				{
 					categoriesTitle.map((category, index) => (
 						<li
-							className={activeCategoryIndex === index ? 'active' : ''}
+							className={categoryId === index ? 'active' : ''}
 							key={index}
-							onClick={() => setActiveCategoryIndex(index)}
+							onClick={() => onChangeCategory(index)}
 						>
 							{category}
 						</li>

@@ -1,18 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Sort = ({ sort, setSort }) => {
-	const sortTypes = ['популярности', 'цене', 'алфавиту'];
+import { setSort } from '../redux/slices/filterSlice';
+
+
+const list = [
+	{ name: 'популярности (DESC)', sortProperty: 'rating' },
+	{ name: 'популярности (ASC)', sortProperty: '-rating' },
+	{ name: 'цене (DESC)', sortProperty: 'price' },
+	{ name: 'цене (ASC)', sortProperty: '-price' },
+	{ name: 'алфавиту (DESC)', sortProperty: 'title' },
+	{ name: 'алфавиту (ASC)', sortProperty: '-title' },
+];
+
+const Sort = () => {
+	const dispatch = useDispatch();
+	const sort = useSelector((state) => state.filter.sort);
+
 	const [showPopup, setShowPopoup] = useState(false);
-	const [currentSortType, setCurrentSortType] = useState(sortTypes[0]);
 
-	const handleSortChoice = (sortTypeIndex) => {
+	const onClickLiseItem = (obj) => {
 		setShowPopoup(!showPopup);
-		setCurrentSortType(sortTypes[sortTypeIndex]);
+		dispatch(setSort(obj))
 	}
-
-	useEffect(() => {
-		setSort(currentSortType === 'популярности' ? 'rating' : currentSortType === 'цене' ? 'price' : 'title');
-	}, [currentSortType])
 
 	return (
 		<div className="sort">
@@ -30,17 +40,17 @@ const Sort = ({ sort, setSort }) => {
 					/>
 				</svg>
 				<b>Сортировка по:</b>
-				<span onClick={() => setShowPopoup(!showPopup)}>{currentSortType}</span>
+				<span onClick={() => setShowPopoup(!showPopup)}>{sort.name}</span>
 			</div>
 			{showPopup && <div className="sort__popup" >
 				<ul>
-					{sortTypes.map((sortType, index) => (
+					{list.map((sortType, i) => (
 						<li
-							className={currentSortType === sortTypes[index] ? 'active' : ''}
-							key={index}
-							onClick={() => handleSortChoice(index)}
+							className={sort.sortProperty === sortType.sortProperty ? 'active' : ''}
+							key={i}
+							onClick={() => onClickLiseItem(sortType)}
 						>
-							{sortType}
+							{sortType.name}
 						</li>
 					))}
 				</ul>
