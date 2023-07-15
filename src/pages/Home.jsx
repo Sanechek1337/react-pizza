@@ -10,12 +10,13 @@ import { PizzaSkeleton } from "../components/PizzaBlock/PizzaSkeleton";
 import Pagination from "../components/Pagination";
 import { SearchContext } from "../App";
 import {
+  selectFilter,
   setCategoryId,
   setCurrentPage,
   setFilters,
 } from "../redux/slices/filterSlice";
 import { list } from "../components/Sort";
-import { fetchPizzas, setItems } from "../redux/slices/pizzaSlice";
+import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,12 +24,9 @@ const Home = () => {
   const isSearch = useRef(false);
   const isMounted = useRef(false);
 
-  const { items, status } = useSelector((state) => state.pizza);
-  const { categoryId, sort, currentPage } = useSelector(
-    (state) => state.filter,
-  );
-
-  const { searchValue } = useContext(SearchContext);
+  const { items, status } = useSelector(selectPizzaData);
+  const { categoryId, sort, currentPage, searchValue } =
+    useSelector(selectFilter);
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
@@ -92,7 +90,7 @@ const Home = () => {
     getPizzas();
 
     isSearch.current = false;
-  }, []);
+  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   return (
     <div className="container">
@@ -106,9 +104,7 @@ const Home = () => {
       <h2 className="content__title">Все пиццы</h2>
       {status === "error" ? (
         <div className="content__error-info">
-          <h2>
-            Произошла ошибка <icon>😕</icon>
-          </h2>
+          <h2>Произошла ошибка 😕</h2>
           <p>
             К сожалению не удалось получить пиццы. Попробуйте повторить попытку
             позже
