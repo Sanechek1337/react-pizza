@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,6 @@ import Sort from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
 import { PizzaSkeleton } from "../components/PizzaBlock/PizzaSkeleton";
 import Pagination from "../components/Pagination";
-import { SearchContext } from "../App";
 import {
   selectFilter,
   setCategoryId,
