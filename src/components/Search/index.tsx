@@ -1,4 +1,4 @@
-import { FC, useCallback, useRef, useState } from "react";
+import React, { FC, useCallback, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setSearchValue } from "../../redux/slices/filterSlice";
 // @ts-ignore
@@ -11,7 +11,7 @@ const Search: FC = () => {
   const [value, setValue] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onClickClear = () => {
+  const onClickClear = (): void => {
     dispatch(setSearchValue(""));
     setValue("");
     inputRef.current?.focus();
@@ -24,7 +24,7 @@ const Search: FC = () => {
     [],
   );
 
-  const onChangeInput = (event: any) => {
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };
