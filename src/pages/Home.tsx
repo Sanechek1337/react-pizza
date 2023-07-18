@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
@@ -14,31 +14,30 @@ import {
   setCurrentPage,
   setFilters,
 } from "../redux/slices/filterSlice";
-import { list } from "../components/Sort";
+import { sortList } from "../components/Sort";
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
-const Home = () => {
+const Home: FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isSearch = useRef(false);
   const isMounted = useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);
 
-  const onChangeCategory = (id) => {
-    dispatch(setCategoryId(id));
+  const onChangeCategory = (index: number) => {
+    dispatch(setCategoryId(index));
   };
 
-  const onChangePage = (number) => {
-    dispatch(setCurrentPage(number));
+  const onChangePage = (pageNumber: number) => {
+    dispatch(setCurrentPage(pageNumber));
   };
 
   const skeletons = [...new Array(4)].map((_, index) => {
     return <PizzaSkeleton key={index} />;
   });
-  const pizzas = items.map((pizzaInfo) => (
+  const pizzas = items.map((pizzaInfo: any) => (
     <PizzaBlock {...pizzaInfo} key={pizzaInfo.id} />
   ));
 
@@ -48,6 +47,7 @@ const Home = () => {
     const filterBy = categoryId > 0 ? `&category=${categoryId}` : "";
     const search = searchValue ? `&search=${searchValue}` : "";
 
+    // @ts-ignore
     dispatch(fetchPizzas({ sortBy, order, filterBy, search, currentPage }));
   };
 
@@ -71,7 +71,9 @@ const Home = () => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
 
-      const sort = list.find((obj) => obj.sortProperty === params.sortProperty);
+      const sort = sortList.find(
+        (obj) => obj.sortProperty === params.sortProperty,
+      );
 
       dispatch(
         setFilters({
@@ -79,7 +81,6 @@ const Home = () => {
           sort,
         }),
       );
-      isSearch.current = true;
     }
   }, []);
 
@@ -87,8 +88,6 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     getPizzas();
-
-    isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   return (
