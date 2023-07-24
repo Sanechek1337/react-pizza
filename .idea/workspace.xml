@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba0a53d4-f00a-4b72-bf85-7a1ff2223ce2" name="Changes" comment="refactor: fix remove item from cart logic">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/react-pizza.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/css/main.857c1d25.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/css/main.857c1d25.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/Cart.deffcda8.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/Cart.deffcda8.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/FullPizza.1130fd82.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/FullPizza.1130fd82.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/NotFound.7ddebc69.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/NotFound.7ddebc69.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/main.5412af28.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/main.5412af28.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/main.5412af28.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/assets.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/arrow-top.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/empty-cart.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/media/empty-cart.db905d1f4b063162f25b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/grey-arrow-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/pizza-logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/media/pizza-logo.56ac87032d8f6fdf863326acd06c0d97.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/trash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartEmpty.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartItem.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NotFoundBlock/NotFoundBlock.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NotFoundBlock/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagination.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/PizzaSkeleton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sort.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/MainLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Cart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FullPizza.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/NotFound.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/cart/selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/cart/slice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/cart/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/filter/selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/filter/slice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/filter/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/pizza/asyncActions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/pizza/selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/pizza/slice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/pizza/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_all.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_button.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_categories.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_sort.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/libs/_normalize.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/calcTotalPrice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getCartFromLS.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2SOCTVYwJeAWqTNnYRNnTEbCjVS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/user/Desktop/web/react/react-pizza/src/redux/slices",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\user\\Desktop\\web\\react\\react-pizza\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "editing.templates",
+    "ts.external.directory.path": "D:\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\web\react\react-pizza\src\redux\slices" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\web\react\react-pizza\src\redux" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba0a53d4-f00a-4b72-bf85-7a1ff2223ce2" name="Changes" comment="" />
+      <created>1689008255629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689008255629</updated>
+      <workItem from="1689008258117" duration="6496000" />
+      <workItem from="1689058334754" duration="5287000" />
+      <workItem from="1689064066813" duration="35000" />
+      <workItem from="1689064169371" duration="306000" />
+      <workItem from="1689066475455" duration="495000" />
+      <workItem from="1689078001218" duration="269000" />
+      <workItem from="1689261621767" duration="172000" />
+      <workItem from="1689261815691" duration="476000" />
+      <workItem from="1689267752015" duration="4659000" />
+      <workItem from="1689356698789" duration="1784000" />
+      <workItem from="1689409323741" duration="2940000" />
+      <workItem from="1689502529539" duration="4362000" />
+      <workItem from="1689615906552" duration="29000" />
+      <workItem from="1689665596572" duration="678000" />
+      <workItem from="1689666301939" duration="12034000" />
+      <workItem from="1689769375959" duration="7022000" />
+      <workItem from="1689853590993" duration="1909000" />
+      <workItem from="1689937838893" duration="1064000" />
+      <workItem from="1689939060637" duration="7849000" />
+      <workItem from="1690038091971" duration="1289000" />
+      <workItem from="1690097724955" duration="6728000" />
+      <workItem from="1690123753893" duration="2556000" />
+      <workItem from="1690178512899" duration="2739000" />
+    </task>
+    <task id="LOCAL-00001" summary="refactor: fix remove item from cart logic">
+      <created>1690181600214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690181600214</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor: fix remove item from cart logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: fix remove item from cart logic" />
+  </component>
+</project>
