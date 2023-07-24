@@ -3,10 +3,10 @@ import { useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 
 import logo from "../assets/img/pizza-logo.svg";
-import Search from "./Search";
+import { Search } from "../components";
 import { selectCart } from "../redux/cart/selectors";
 
-const Header = () => {
+export const Header = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const location = useLocation();
   const isMounted = useRef(false);
@@ -78,5 +78,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

@@ -14,7 +14,7 @@ const categoriesTitle = [
   "Закрытые",
 ];
 
-const Categories: FC<CategoriesProps> = memo(
+export const Categories: FC<CategoriesProps> = memo(
   ({ categoryId, onChangeCategory }) => {
     return (
       <div className="categories">
@@ -33,5 +33,3 @@ const Categories: FC<CategoriesProps> = memo(
     );
   },
 );
-
-export default Categories;
